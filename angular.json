@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/an",
+            "outputPath": "dist/angular-github-actions",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -64,10 +64,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "an:build:production"
+              "browserTarget": "angular-github-actions:build:production"
             },
             "development": {
-              "browserTarget": "an:build:development"
+              "browserTarget": "angular-github-actions:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -75,7 +75,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "an:build"
+            "browserTarget": "angular-github-actions:build"
           }
         },
         "test": {
