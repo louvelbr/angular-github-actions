@@ -15,12 +15,20 @@ jobs:
     runs-on: ubuntu-latest
     if: github.event.pull_request.merged == true
     steps:
-      - name: Setup Node.js
-        uses: actions/setup-node@v2
-        with:
-          node-version: '16'
-      - name: Build
-        run: npm run build:prod
+    - name: Checkout
+      uses: actions/checkout@v2
+
+    - name: Setup Node.js
+      uses: actions/setup-node@v2
+      with:
+        node-version: '16'
+
+    - name: Install dependencies
+      run: npm install
+      
+    - name: Build
+      run: npm run build:prod
+      
   deploy: 
     runs-on: ubuntu-latest
     if: github.event.pull_request.merged == true
