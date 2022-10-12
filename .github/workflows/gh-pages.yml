@@ -11,6 +11,12 @@ on:
     types: [closed]
 
 jobs:
+  build: 
+    runs-on: ubuntu-latest
+    if: github.event.pull_request.merged == true
+    steps:
+     - name: Build
+       run: npm run build:prod
   deploy: 
     runs-on: ubuntu-latest
     if: github.event.pull_request.merged == true
