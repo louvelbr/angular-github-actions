@@ -29,11 +29,6 @@ jobs:
     - name: Build
       run: npm run build:prod
       
-  deploy: 
-    needs: [build]
-    runs-on: ubuntu-latest
-    if: github.event.pull_request.merged == true
-    steps:
     - name: Deploy
       if: success()
       uses: peaceiris/actions-gh-pages@v3
