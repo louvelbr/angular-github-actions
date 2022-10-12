@@ -10,7 +10,7 @@ on:
     - main
 
 jobs:
-  build:
+  ci:
     runs-on: ubuntu-latest
     steps:
     - name: Checkout
@@ -27,5 +27,4 @@ jobs:
     - name: Run tests
       run: npm run test:headless
 
-    - name: Build
-      run: npm run build:prod
+   
